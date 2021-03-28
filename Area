@@ -1,0 +1,41 @@
+import java.util.*;
+import java.lang.Math.*;
+/**
+ * @author (B180970022 - Г.Ганбаяр)
+ * @version (Лаб - 5)
+ */
+public class Trapeziintalbai
+{
+    public static void main(String[] args) 
+    {
+        double ihsuuri, bagasuuri, ontsog, Talbai, a, b, h, y;
+        
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println(" Их суурийг оруулна уу!.");
+        ihsuuri = sc.nextDouble();
+        
+        System.out.println(" Бага суурийг оруулна уу!.");
+        bagasuuri = sc.nextDouble();
+        
+        System.out.println(" Альфа өнцгийг оруулна уу!.");
+        // ontsog = sc.nextDouble();
+        
+        ontsog = (Math.tan(Math.toRadians(sc.nextInt())));
+        /** Math-ын тангенс болон радиан сангуудыг ашиглаж өнцөгт утга өгөв. */
+            
+        a = ((ihsuuri - bagasuuri)/2);
+        /** Адил хажуут трапецын хувьд 2 суурь өгөгдсөн тохиолдолд гурвалжны катетийг олох томео болон түүний утгыг "a"-д өгөв. */
+            
+            h = ontsog * a;
+            /** SOHCAHTOA буюу тригонометрийн функцуудыг ашиглаж. Өгөгдсөн өнцөг болон катетаас Трапецын өндөрийг олов. Түүнийг "h"-д өгөв. */
+            
+        y = (0.5 * (ihsuuri + bagasuuri));
+        /** A=(1/2)(h)(a+b) буюу трапецын талбай олох томео. Үүнээс бид 2 суурийг нэмж 0,5-т үржүүлсэн болно. */
+        
+        Talbai = y * h;
+        /** Дээрх томео есоор өндөр болон сууриудын нийлбэрийг хооронд үржүүлж талбай олдов. */
+
+        System.out.format("\n Трапецийн талбай бол = %.2f\n",Talbai);
+    }
+}
